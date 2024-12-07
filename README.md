@@ -1,6 +1,6 @@
 # Multi File Appender
 
-This Python script traverses the contents of files from a directory structure based on user-defined directory and file naming patterns. It outputs the combined content to a single file.
+This Python traverses a directory structure, filtering sub-directories and file-extensions based on specified filters, and appends the content of matching files into a single output file.
 
 ## Features
 - **Directory Filtering**: Process directories starting with a specified prefix (e.g., `V`).
