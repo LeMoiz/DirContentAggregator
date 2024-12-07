@@ -1,6 +1,6 @@
 # Multi File Appender
 
-This Python script aggregates the contents of files from a directory structure based on user-defined directory and file naming patterns. It outputs the combined content to a single file, providing flexibility in content organization and aggregation.
+This Python script aggregates the contents of files from a directory structure based on user-defined directory and file naming patterns. It outputs the combined content to a single file.
 
 ## Features
 - **Directory Filtering**: Process directories starting with a specified prefix (e.g., `V`).
