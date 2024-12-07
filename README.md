@@ -1,4 +1,4 @@
-# Multi-File-Appender
+# Multi File Appender
 
 This Python script traverses a directory structure, filtering directories and files based on specified conditions, and appends the content of matching files into a single output file. It is useful for combining scripts or text files stored in a nested folder structure.
 
