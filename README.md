@@ -46,7 +46,7 @@ python script.py <directory_path> <target_dir_prefix> <target_file_suffix> <outp
   ```
 
 ## Output
-The script creates an output file named `output_file.<output_file_suffix>` in the current working directory. This file contains the traversed content of all matched files, with each file's content prefixed by a header indicating its source.
+The script creates an output file named `output_file.<output_file_suffix>` in the current working directory. This file contains the traversed content of all matched files.
 
 ## Error Handling
 - Files that cannot be read due to encoding issues are skipped with a warning.
