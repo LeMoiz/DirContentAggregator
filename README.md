@@ -27,22 +27,22 @@ python script.py <directory_path> <target_dir_prefix> <target_file_suffix> <outp
 ### Example Commands
 - **Aggregate `.sql` files in directories starting with `V`:**
   ```bash
-  python script.py /path/to/root V .sql .txt
+  python multi_file_appender.py /path/to/root V .sql .txt
   ```
 
 - **Aggregate `.txt` files in directories starting with `S`:**
   ```bash
-  python script.py /path/to/root S .txt .log
+  python multi_file_appender.py /path/to/root S .txt .log
   ```
 
 - **Aggregate all files, ignoring filters:**
   ```bash
-  python script.py /path/to/root None None .out
+  python multi_file_appender.py /path/to/root None None .out
   ```
 
 - **Aggregate `.log` files in all directories:**
   ```bash
-  python script.py /path/to/root None .log .log
+  python multi_file_appender.py /path/to/root None .log .log
   ```
 
 ## Output
