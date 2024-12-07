@@ -1,16 +1,12 @@
 # Multi File Appender
 
-This Python script traverses a directory structure, filtering directories and files based on specified conditions, and appends the content of matching files into a single output file. It is useful for combining scripts or text files stored in a nested folder structure.
+This Python script aggregates the contents of files from a directory structure based on user-defined directory and file naming patterns. It outputs the combined content to a single file, providing flexibility in content organization and aggregation.
 
 ## Features
-- Filters directories that start with a specified string (`startswith_filter`).
-- Filters files that end with a specified string (`endswith_filter`).
-- Default filters:
-  - Directories starting with `V`.
-  - Files ending with `.sql`.
-- Supports aggregating content from any file type (e.g., `.txt`, `.log`, `.py`).
-- Outputs aggregated content into a single `output_file.sql` in the current working directory.
-- Handles `UnicodeDecodeError` gracefully by skipping problematic files.
+- **Directory Filtering**: Process directories starting with a specified prefix (e.g., `V`).
+- **File Filtering**: Include files ending with a specified suffix (e.g., `.sql`).
+- **Customizable Output File**: Specify the extension of the output file (e.g., `.txt`, `.sql`).
+- **Error Handling**: Skips files that cannot be read due to encoding issues (`UnicodeDecodeError`).
 
 ## Usage
 
@@ -19,47 +15,47 @@ This Python script traverses a directory structure, filtering directories and fi
 
 ### Command-Line Usage
 ```bash
-python script.py <directory_path> [startswith_filter] [endswith_filter]
+python script.py <directory_path> <target_dir_prefix> <target_file_suffix> <output_file_suffix>
 ```
 
 ### Parameters
-1. `directory_path` (required): The root directory to start searching.
-2. `startswith_filter` (optional): Filters directories that start with this string. Default is `V`. Use `None` to skip this filter.
-3. `endswith_filter` (optional): Filters files that end with this string. Default is `.sql`. Use `None` to skip this filter.
+1. **`directory_path`** (required): Root directory to start searching.
+2. **`target_dir_prefix`** (required): Filters directories starting with this string (e.g., `V`). Use `None` to skip this filter.
+3. **`target_file_suffix`** (required): Filters files ending with this string (e.g., `.sql`). Use `None` to skip this filter.
+4. **`output_file_suffix`** (required): Extension for the output file (e.g., `.txt`).
 
 ### Example Commands
-- Aggregate `.sql` files in directories starting with `V`:
+- **Aggregate `.sql` files in directories starting with `V`:**
   ```bash
-  python script.py /path/to/root
+  python script.py /path/to/root V .sql .txt
   ```
 
-- Aggregate `.txt` files in directories starting with `S`:
+- **Aggregate `.txt` files in directories starting with `S`:**
   ```bash
-  python script.py /path/to/root S .txt
+  python script.py /path/to/root S .txt .log
   ```
 
-- Aggregate all files, ignoring filters:
+- **Aggregate all files, ignoring filters:**
   ```bash
-  python script.py /path/to/root None None
+  python script.py /path/to/root None None .out
   ```
 
-- Aggregate `.log` files in all directories:
+- **Aggregate `.log` files in all directories:**
   ```bash
-  python script.py /path/to/root None .log
+  python script.py /path/to/root None .log .log
   ```
 
 ## Output
-The script creates a file named `output_file.sql` in the current working directory, containing the aggregated content of all matched files.
+The script creates an output file named `output_file.<output_file_suffix>` in the current working directory. This file contains the aggregated content of all matched files, with each file's content prefixed by a header indicating its source.
 
 ## Error Handling
-- Files that cannot be read due to encoding issues are skipped, and an error message is printed.
+- Files that cannot be read due to encoding issues are skipped with a warning.
 
 ## License
 This project is licensed under the MIT License.
 
 ## Contributing
-Feel free to submit issues or pull requests to enhance this script!
+Contributions, issues, and pull requests are welcome to enhance this script!
 
 ## Author
 [LeMoiz](https://github.com/LeMoiz)
-**
