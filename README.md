@@ -58,4 +58,4 @@ This project is licensed under the MIT License.
 Contributions, issues, and pull requests are welcome to enhance this script!
 
 ## Author
-[LeMoiz](https://github.com/LeMoiz)
+Me
